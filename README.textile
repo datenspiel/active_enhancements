@@ -1,0 +1,51 @@
+h2. ActiveEnhancements
+
+This is a collection of ActiveRecord enhancements we use a lot. It's not a biggie, too. Quite useful. ;-)
+
+h2. Example
+
+*revert*
+
+If you have a collection of database entries you wanna throw away and revert only the data instead of using 
+the migration tasks to revert you could use it like that:
+
+<code>
+	reverted = Group.revert
+</code>
+
+It deletes all entries in the associated table and sets AUTO_INCREMENT to 1. Quite useful if the id is important.
+
+*collectable*
+
+This is nice to use for array that you have to use for selectbox items. Simply add the attributes you want to collect
+has hash:
+
+<code>
+	@products = Product.collectable(:identifier,:id)
+</code>
+
+*destroy_by_attributes*
+
+Sometimes you want to destroy database entries without giving the id. Maybe, because you do not know ?
+
+<code>
+	NetworkProductJoin.destroy_by_attributes({:network_id => entry.network_id, :product_id => @product.id})
+</code>
+
+*find_or_create*
+
+This is an enhancement to the magical find methods. 
+
+<code>
+	
+	master = User.find_or_create({:login => "master", 
+	                      :password => "one2three", 
+	                      :password_confirmation => "one2three", 
+	                      :email => "master@foo.com",
+	                      :active => true})
+	
+</code>
+
+Very useful if you have to seed your database. 
+
+Copyright (c) 2010 Daniel Schmidt Datenspiel GmbH 2010, released under the MIT license
