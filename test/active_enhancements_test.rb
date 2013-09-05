@@ -1,8 +1,9 @@
-require 'test_helper'
-
-class ActiveEnhancementsTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
-end
+# -*- encoding : utf-8 -*-
+#require 'test_helper'
+#
+#class ActiveEnhancementsTest < ActiveSupport::TestCase
+#  # Replace this with your real tests.
+#  test "the truth" do
+#    assert true
+#  end
+#end

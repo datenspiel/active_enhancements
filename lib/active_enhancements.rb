@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ActiveEnhancements
   
   def self.included(base)
